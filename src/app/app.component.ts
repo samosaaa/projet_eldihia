@@ -12,9 +12,6 @@ export class AppComponent{
   public products : ProductModel []= [];
 
   constructor(private productService : ProductsService) {
-    this.loadData()
   }
-  public loadData(){
-    this.productService.getProducts().subscribe(data =>(this.products=data));
-  }
+
 }

@@ -10,6 +10,10 @@ import { ArticleComponent } from './article/article.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ProductsService} from "./services/products.service";
+import mockServer from './mock/app.mock';
+
+mockServer();
 
 @NgModule({
   declarations: [
@@ -26,7 +30,7 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

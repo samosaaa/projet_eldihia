@@ -1,8 +1,8 @@
 // app.mock.ts
-import {Server, Model, RestSerializer} from 'miragejs';
+import {Server} from 'miragejs';
 import {productModels} from './data'; // Importez les données depuis data.ts
 
-export function makeServer() {
+export default () => {
 
     new Server({
         seeds(server) {
@@ -12,9 +12,7 @@ export function makeServer() {
     routes() {
       this.namespace = 'api';
       // Route pour obtenir la liste des produits
-        this.get('/products', (schema) => {
-            return schema.all('product');
-        });
+        this.get('/products', (schema => schema.db['productModels']));
 
       // Route pour obtenir un produit par son ID
       this.get('/products/:id', (schema, request) => {
@@ -39,7 +37,6 @@ export function makeServer() {
         } else {
           // Gérer le cas où le produit est introuvable
           return {error: 'Product not found'};
-
         }
       });
 

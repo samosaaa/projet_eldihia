@@ -6,37 +6,14 @@ import {ProductModel} from "../models/product";
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss']
 })
-export class AccueilComponent implements OnInit{
+export class AccueilComponent{
   products: ProductModel[] = [];
 
-  constructor(private productsService: ProductsService) {}
-
-  ngOnInit() {
-    this.productsService.getProducts().subscribe((data: any) => {
-      if (Array.isArray(data)) {
-        this.products = data.map((productData: any) => new ProductModel(
-          productData.id,
-          productData.name,
-          productData.price,
-          productData.image,
-          productData.size,
-          productData.color,
-          productData.type
-        ));
-      } else {
-        this.products = [new ProductModel(
-          data.id,
-          data.name,
-          data.price,
-          data.image,
-          data.size,
-          data.color,
-          data.type
-        )];
-      }
-
-      console.log("les produits : ", this.products);
-    });
+  constructor(private productsService: ProductsService) {
+    this.loadData();
   }
-
+    public loadData(){
+        this.productsService.getProducts().subscribe(data =>(this.products=data));
+        console.log(this.products);
+    }
 }
