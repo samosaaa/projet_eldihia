@@ -1,0 +1,23 @@
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsive avec une largeur minimale de 300px */
+  gap: 20px; /* Espacement entre les éléments de la grille */
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.product-card img {
+  max-width: 100%; /* L'image conserve sa largeur maximale pour s'adapter à la grille */
+  height: auto; /* Hauteur automatique pour éviter la distorsion */
+}
+
+.product-details {
+  margin-top: 10px;
+}
+
+/* Vous pouvez ajouter plus de styles CSS personnalisés selon vos besoins */
