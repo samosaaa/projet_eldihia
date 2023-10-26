@@ -1,8 +1,8 @@
+<div class="product-list">
 <div *ngFor="let product of products" class="product-card">
-  <img [src]="product.image">
-  <div class="product-details">
-    <h2>{{ product.name }}</h2>
-  </div>
+  <img [src]="product.image" alt="{{ product.name }}" class="full-width-image">
 </div>
+</div>
+
 
 

@@ -6,7 +6,7 @@ export default () => {
 
     new Server({
         seeds(server) {
-            server.db.loadData(productModels)
+            server.db.loadData({productModels});
         },
 
     routes() {

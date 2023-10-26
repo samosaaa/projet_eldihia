@@ -12,6 +12,11 @@ export class AppComponent{
   public products : ProductModel []= [];
 
   constructor(private productService : ProductsService) {
+  productService.getProducts().subscribe((data: ProductModel[]) => {
+          console.log("Les produits : ", data);
+      });
   }
+
+
 
 }

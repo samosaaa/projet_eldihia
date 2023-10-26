@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { ProductsService} from "../services/products.service";
 import {ProductModel} from "../models/product";
+import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -9,7 +10,7 @@ import {ProductModel} from "../models/product";
 export class AccueilComponent{
   products: ProductModel[] = [];
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService, private route:ActivatedRoute) {
     this.loadData();
   }
     public loadData(){

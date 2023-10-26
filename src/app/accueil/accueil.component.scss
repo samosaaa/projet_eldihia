@@ -1,23 +1,31 @@
+/* Utilisez CSS Grid pour la mise en page */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsive avec une largeur minimale de 300px */
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les trois premières images */
   gap: 20px; /* Espacement entre les éléments de la grille */
 }
 
-.product-card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  background-color: #f9f9f9;
+/* Les deux premières images sont empilées verticalement */
+.product-card:nth-child(-n+2) {
+  grid-column: span 2; /* Faites en sorte que les deux premières images occupent deux colonnes de la grille */
 }
 
+/* Les trois suivantes sont disposées côte à côte */
+.product-card:nth-child(n+3) {
+  grid-column: span 1; /* Faites en sorte que les trois suivantes occupent une colonne de la grille */
+}
+
+.product-card {
+  display: inline-block; /* Utilisez display: inline-block pour que la carte prenne la taille de l'image */
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
 .product-card img {
-  max-width: 100%; /* L'image conserve sa largeur maximale pour s'adapter à la grille */
-  height: auto; /* Hauteur automatique pour éviter la distorsion */
+  max-width: 100%;
+  height: auto;
 }
 
 .product-details {
   margin-top: 10px;
 }
-
-/* Vous pouvez ajouter plus de styles CSS personnalisés selon vos besoins */

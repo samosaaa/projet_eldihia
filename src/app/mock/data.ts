@@ -1,10 +1,13 @@
 import {ProductModel} from "../models/product";
 
 export const productData = [
-  { id: '1', name: 'Robe 1', price: 50, image: '/assets/Robes/Robe1.jpg',size: "M", color: "noire", type:"karakou" },
-  { id: '2', name: 'Robe 2', price: 65, image: '/assets/Robes/Robe2.jpg',size:"S", color :"noire",type:"caftan" },
+  { id: '1', name: 'Robe 1', price: 50, image: 'assets/Robes/Robe1.jpeg',size: "M", color: "noire", type:"karakou" },
+  { id: '2', name: 'Robe 2', price: 65, image: 'assets/Robes/Robe2.jpeg',size:"S", color :"noire",type:"caftan" },
+  { id: '3', name: 'Robe 3', price: 90, image: 'assets/Robes/Robe3.jpeg',size:"L", color :"bleue",type:"chaoui" },
+  { id: '4', name: 'Robe 4', price: 130, image: 'assets/Robes/Robe4.jpeg',size:"S", color :"noire",type:"caftan" },
+  { id: '5', name: 'Robe 5', price: 45, image: 'assets/Robes/Robe5.jpeg',size:"XL", color :"noire",type:"caftan" },
 ];
 
-export const productModels = productData.map(product => {
-  return new ProductModel(product.id, product.name, product.price, product.image, product.size, product.color, product.type);
+export const productModels : ProductModel[] = productData.map(productData => {
+  return new ProductModel(productData.id, productData.name, productData.price, productData.image, productData.size, productData.color, productData.type);
 });

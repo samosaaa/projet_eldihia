@@ -1,0 +1,15 @@
+/* Augmenter la hauteur de l'en-tête */
+.navbar {
+  height: 100px; /* Modifiez la hauteur selon vos besoins */
+}
+.navbar a.navbar-brand {
+  font-family: 'Georgia', serif; /* Changer la police selon vos besoins */
+  font-size: 50px; /* Modifiez la taille de la police selon vos besoins */
+  font-weight: bold;
+}
+.navbar li.nav-item {
+  font-family: 'Georgia', serif; /* Changer la police selon vos besoins */
+  font-size: 23px; /* Modifiez la taille de la police selon vos besoins */
+  margin-right: 10px;
+}
+
