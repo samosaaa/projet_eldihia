@@ -1,31 +1,48 @@
-/* Utilisez CSS Grid pour la mise en page */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les trois premières images */
-  gap: 20px; /* Espacement entre les éléments de la grille */
-}
-
-/* Les deux premières images sont empilées verticalement */
-.product-card:nth-child(-n+2) {
-  grid-column: span 2; /* Faites en sorte que les deux premières images occupent deux colonnes de la grille */
-}
-
-/* Les trois suivantes sont disposées côte à côte */
-.product-card:nth-child(n+3) {
-  grid-column: span 1; /* Faites en sorte que les trois suivantes occupent une colonne de la grille */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
 }
 
 .product-card {
-  display: inline-block; /* Utilisez display: inline-block pour que la carte prenne la taille de l'image */
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
   text-align: center;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: none;
 }
+
 .product-card img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  display: block;
 }
 
 .product-details {
   margin-top: 10px;
+}
+
+/* Style spécifique pour la première image (index 0) */
+.full-width {
+  grid-column: span 2; /* Pour occuper deux colonnes de la grille */
+  width: 100%;
+  margin: 0; /* Supprimez la marge uniquement pour la première carte */
+  border: none; /* Supprimez la bordure uniquement pour la première carte */
+}
+
+/* Agrandissez la première image pour qu'elle prenne toute la largeur de la page */
+.full-width img {
+  width: 100%; /* Agrandissez la largeur de l'image pour qu'elle prenne toute la page */
+  max-width: none; /* Supprimez la limite de la largeur maximale pour cette image */
+}
+
+.custom-font {
+  font-family: 'Georgia', serif;
+  font-size : larger;
+  font-style: oblique;
+  font-weight: bold;
 }
