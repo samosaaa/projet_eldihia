@@ -1,18 +1,20 @@
 // app.mock.ts
 import {Server} from 'miragejs';
-import {productModels} from './data'; // Importez les données depuis data.ts
+import {productModels,userModels} from './data'; // Importez les données depuis data.ts
 
 export default () => {
 
     new Server({
         seeds(server) {
-            server.db.loadData({productModels});
+            server.db.loadData({productModels,userModels});
         },
 
     routes() {
       this.namespace = 'api';
       // Route pour obtenir la liste des produits
         this.get('/products', (schema => schema.db['productModels']));
+      // Route pour obtenir la liste des utilisateurs
+      this.get('/users', (schema => schema.db['userModels']));
 
       // Route pour obtenir un produit par son ID
       this.get('/products/:id', (schema, request) => {
