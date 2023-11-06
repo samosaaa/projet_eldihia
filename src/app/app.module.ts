@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ProductsService} from "./services/products/products.service";
 import mockServer from './mock/app.mock';
+import { CreationComponent } from './creation/creation.component';
 
 mockServer();
 
@@ -23,7 +24,8 @@ mockServer();
     AccueilComponent,
     ArticleComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CreationComponent
   ],
   imports: [
     BrowserModule,
