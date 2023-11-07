@@ -13,6 +13,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {ProductsService} from "./services/products/products.service";
 import mockServer from './mock/app.mock';
 import { CreationComponent } from './creation/creation.component';
+import { CategoryKabyleComponent } from './category/category-kabyle/category-kabyle.component';
+import { CategoryCaftanComponent } from './category/category-caftan/category-caftan.component';
+import { CategoryChaouiComponent } from './category/category-chaoui/category-chaoui.component';
+import { CategoryKarakouComponent } from './category/category-karakou/category-karakou.component';
 
 mockServer();
 
@@ -25,7 +29,11 @@ mockServer();
     ArticleComponent,
     HeaderComponent,
     FooterComponent,
-    CreationComponent
+    CreationComponent,
+    CategoryKabyleComponent,
+    CategoryCaftanComponent,
+    CategoryChaouiComponent,
+    CategoryKarakouComponent
   ],
   imports: [
     BrowserModule,
