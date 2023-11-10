@@ -1,0 +1,62 @@
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.category-card {
+  background-color: rgba(240, 240, 240, 0.7);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.2s;
+  position: relative;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+}
+
+.category-card a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.type1, .type2, .type3, .type4 {
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.type1 {
+  background-image: url('/assets/Robes/kabyle/RobeK1.jpeg');
+}
+
+.type2 {
+  background-image: url('/assets/Robes/caftan/RobeCA1.jpeg');
+}
+
+.type3 {
+  background-image: url('/assets/Robes/chaoui/RobeCH1.jpeg');
+}
+
+.type4 {
+  background-image: url('/assets/Robes/karakou/RobeKA1.jpeg');
+}
+
+.category-card h2 {
+  font-weight: bold;
+  font-size: 60px; /* Ajustez la taille du texte selon vos besoins */
+  color: white; /* Couleur du texte foncée */
+}
+
+.category-card:hover .type1, .category-card:hover .type2, .category-card:hover .type3, .category-card:hover .type4 {
+  opacity: 0.9;
+}

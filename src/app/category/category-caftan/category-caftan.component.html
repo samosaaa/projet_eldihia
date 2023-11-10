@@ -1,0 +1,12 @@
+<div class="page-title">
+  <h1>Caftan</h1>
+</div>
+<div class="category-container">
+  <div class="category-card" *ngFor="let robe of robesCaftan">
+    <a [routerLink]="['/product', robe.id]">
+    <img [src]="robe.image" alt="{{ robe.name }}">
+    </a>
+    <p class="category-title">{{ robe.name }}</p>
+  </div>
+</div>
+
