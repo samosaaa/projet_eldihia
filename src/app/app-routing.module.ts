@@ -6,6 +6,7 @@ import {CategoryKabyleComponent} from "./category/category-kabyle/category-kabyl
 import {CategoryCaftanComponent} from "./category/category-caftan/category-caftan.component";
 import {CategoryChaouiComponent} from "./category/category-chaoui/category-chaoui.component";
 import {CategoryKarakouComponent} from "./category/category-karakou/category-karakou.component";
+import {ProductDetailComponent} from "./product-detail/product-detail.component";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'caftan',component:CategoryCaftanComponent},
   {path:'chaoui',component:CategoryChaouiComponent},
   {path:'karakou',component:CategoryKarakouComponent},
+  {path: 'product/:id',component: ProductDetailComponent },
   {path: '**', component: AccueilComponent},
 ];
 

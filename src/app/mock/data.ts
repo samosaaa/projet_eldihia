@@ -8,7 +8,7 @@ export const productData = [
       price: 50,
       image: 'assets/Robes/kabyle/RobeK1.jpeg',
       size: 'M',
-      color: 'noire',
+      color: 'blanc',
       type: 'kabyle'
     },
     {
@@ -17,7 +17,7 @@ export const productData = [
       price: 65,
       image: 'assets/Robes/caftan/RobeCA1.jpeg',
       size: 'S',
-      color: 'noire',
+      color: 'verte',
       type: 'caftan'
     },
     {
@@ -35,7 +35,7 @@ export const productData = [
       price: 130,
       image: 'assets/Robes/karakou/RobeKA1.jpeg',
       size: 'S',
-      color: 'noire',
+      color: 'rouge',
       type: 'karakou'
     },
     {
@@ -44,7 +44,7 @@ export const productData = [
       price: 50,
       image: 'assets/Robes/kabyle/RobeK2.jpeg',
       size: 'L',
-      color: 'rouge',
+      color: 'blanc',
       type: 'kabyle'
     },
     {
@@ -53,7 +53,7 @@ export const productData = [
       price: 65,
       image: 'assets/Robes/caftan/RobeCA2.jpeg',
       size: 'M',
-      color: 'blanche',
+      color: 'noire',
       type: 'caftan'
     },
     {
@@ -62,7 +62,7 @@ export const productData = [
       price: 95,
       image: 'assets/Robes/chaoui/RobeCH3.jpeg',
       size: 'L',
-      color: 'rouge',
+      color: 'dorée',
       type: 'chaoui'
     },
     {
@@ -71,7 +71,7 @@ export const productData = [
       price: 130,
       image: 'assets/Robes/karakou/RobeKA2.jpeg',
       size: 'M',
-      color: 'dorée',
+      color: 'verte',
       type: 'karakou'
     },
     {
@@ -80,7 +80,7 @@ export const productData = [
       price: 55,
       image: 'assets/Robes/kabyle/RobeK3.jpeg',
       size: 'S',
-      color: 'violette',
+      color: 'blanc',
       type: 'kabyle'
     },
     {
@@ -89,7 +89,7 @@ export const productData = [
       price: 70,
       image: 'assets/Robes/caftan/RobeCA3.jpeg',
       size: 'M',
-      color: 'noire',
+      color: 'verte',
       type: 'caftan'
     },
     {
@@ -98,7 +98,7 @@ export const productData = [
       price: 90,
       image: 'assets/Robes/chaoui/RobeCH2.jpeg',
       size: 'XL',
-      color: 'verte',
+      color: 'bleue',
       type: 'chaoui'
     },
     {
@@ -107,7 +107,7 @@ export const productData = [
       price: 140,
       image: 'assets/Robes/karakou/RobeKA3.jpeg',
       size: 'S',
-      color: 'blanche',
+      color: 'bleue',
       type: 'karakou'
     },
     {
@@ -116,7 +116,7 @@ export const productData = [
       price: 60,
       image: 'assets/Robes/kabyle/RobeK4.jpeg',
       size: 'L',
-      color: 'bleue',
+      color: 'blanc',
       type: 'kabyle'
     },
     {
@@ -134,7 +134,7 @@ export const productData = [
       price: 100,
       image: 'assets/Robes/chaoui/RobeCH4.jpeg',
       size: 'M',
-      color: 'dorée',
+      color: 'bleue',
       type: 'chaoui'
     },
     {
@@ -143,7 +143,7 @@ export const productData = [
       price: 150,
       image: 'assets/Robes/karakou/RobeKA4.jpeg',
       size: 'XL',
-      color: 'violette',
+      color: 'bleue',
       type: 'karakou'
     },
     {
@@ -152,7 +152,7 @@ export const productData = [
       price: 80,
       image: 'assets/Robes/karakou/RobeKA5.jpeg',
       size: 'M',
-      color: 'argent',
+      color: 'noire',
       type: 'karakou'
     },
     {
@@ -161,7 +161,7 @@ export const productData = [
       price: 70,
       image: 'assets/Robes/karakou/RobeKA6.jpeg',
       size: 'S',
-      color: 'dorée',
+      color: 'noire',
       type: 'karakou'
     },
     {
@@ -170,7 +170,7 @@ export const productData = [
       price: 90,
       image: 'assets/Robes/karakou/RobeKA7.jpeg',
       size: 'L',
-      color: 'noire',
+      color: 'rouge',
       type: 'karakou'
     }
   ]

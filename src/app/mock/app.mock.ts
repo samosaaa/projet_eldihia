@@ -1,6 +1,7 @@
 // app.mock.ts
 import {Server} from 'miragejs';
-import {productModels, userModels} from './data'; // Importez les données depuis data.ts
+import {productModels, userModels} from './data';
+import {ProductModel} from "../models/product"; // Importez les données depuis data.ts
 
 export default () => {
 
@@ -18,8 +19,14 @@ export default () => {
 
             // Route pour obtenir un produit par son ID
             this.get('/products/:id', (schema, request) => {
+              console.log("test");
                 const productId = request.params['id'];
-                return schema.find('product', productId);
+                console.log("tsetsets"+productId);
+                console.log("fsfsrsr",schema.db['productModels'].findBy({id:'6'}).id);
+                console.log("je suis dans le mock"+schema.db['productModels'].findBy({id:'6'}));
+                const test : ProductModel = schema.db['productModels'].findBy({id:productId});
+                console.log(test);
+                return test;
             });
 
             // Route pour créer un nouveau produit (si nécessaire)

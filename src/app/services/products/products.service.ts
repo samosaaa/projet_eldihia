@@ -13,11 +13,19 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts() : Observable<ProductModel[]> {
-    console.log("dans le service" +this.http.get<Array<ProductModel>>(this.baseUrl));
     this.http.get<Array<ProductModel>>(this.baseUrl).subscribe((data: ProductModel[]) => {
-        console.log("Les produits : ", data);
     });
     return this.http.get<ProductModel[]>(this.baseUrl);
+  }
+
+  getProductById(id: string): Observable<ProductModel | undefined> {
+
+    const url = `${this.baseUrl}/${id}`;
+    this.http.get<ProductModel>(url).subscribe((data)=>{
+      console.log(data)
+    });
+    // URL de la requête pour obtenir un produit par son ID
+    return this.http.get<ProductModel>(url);
   }
 }
 
