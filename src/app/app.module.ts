@@ -18,6 +18,7 @@ import { CategoryCaftanComponent } from './category/category-caftan/category-caf
 import { CategoryChaouiComponent } from './category/category-chaoui/category-chaoui.component';
 import { CategoryKarakouComponent } from './category/category-karakou/category-karakou.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { MaisonComponent } from './maison/maison.component';
 
 mockServer();
 
@@ -35,7 +36,8 @@ mockServer();
     CategoryCaftanComponent,
     CategoryChaouiComponent,
     CategoryKarakouComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    MaisonComponent
   ],
   imports: [
     BrowserModule,
