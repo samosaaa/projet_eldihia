@@ -8,6 +8,7 @@ import {CategoryChaouiComponent} from "./category/category-chaoui/category-chaou
 import {CategoryKarakouComponent} from "./category/category-karakou/category-karakou.component";
 import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {MaisonComponent} from "./maison/maison.component";
+import {CartComponent} from "./cart/cart.component";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'karakou',component:CategoryKarakouComponent},
   {path: 'product/:id',component: ProductDetailComponent},
   {path:'maison',component:MaisonComponent},
+  {path:'panier',component:CartComponent},
   {path: '**', component: AccueilComponent},
 ];
 
