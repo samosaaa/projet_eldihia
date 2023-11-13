@@ -1,25 +1,45 @@
+<!-- footer.component.html -->
+<mat-divider></mat-divider>
+
 <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <h4>Nous contacter</h4>
-        <ul>
-          <li>Téléphone: 01 23 45 67 89</li>
-          <li>Email: contact@eldihia.fr</li>
-          <li>Adresse: 30 lotissement dauphin,Alger </li>
-        </ul>
+        <table>
+          <tr>
+            <td>
+              <mat-icon> stay_primary_portrait</mat-icon>
+            </td>
+            <th>01 23 45 67 89</th>
+          </tr>
+          <tr>
+            <td>
+              <mat-icon> mail_outline</mat-icon>
+            </td>
+            <th><a href="mailto:contact@eldihia.fr">contact@eldihia.fr</a></th>
+          </tr>
+          <tr>
+            <td>
+              <mat-icon> location_on</mat-icon>
+            </td>
+            <th>30 lotissement dauphin,Alger</th>
+          </tr>
+        </table>
       </div>
       <div class="col-md-4">
         <h4>Liens rapides</h4>
         <ul>
-          <li><a routerLink="/">Accueil</a></li>
-          <li><a routerLink="/collection">Nos Produits</a></li>
-          <li><a routerLink="/contact">Contactez-nous</a></li>
+          <li><a routerLink="/">El-Dihia</a></li>
+          <li><a routerLink="/collection">Notre Collection</a></li>
+          <li><a routerLink="/produits">Nos Produits</a></li>
         </ul>
       </div>
       <div class="col-md-4">
         <h4>Restez connectés</h4>
-        <p>Suivez-nous sur les réseaux sociaux pour rester à jour avec nos dernières collections et offres spéciales.</p>
+        <p>Suivez-nous sur les réseaux sociaux pour rester à jour avec nos dernières collections et offres
+          spéciales.</p>
+        <mat-icon>info</mat-icon>
         <div class="social-icons">
           <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>

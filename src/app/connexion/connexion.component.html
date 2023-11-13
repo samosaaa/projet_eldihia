@@ -1,1 +1,33 @@
-<p>connexion works!</p>
+<div class="box-login">
+  <mat-card>
+    <h2>Connexion</h2>
+    <mat-divider></mat-divider>
+    <br>
+
+    <form [formGroup]="userAuthentication" (ngSubmit)="signIn()">
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="mail" type="text" id="mail" name="mail" required>
+        <mat-error *ngIf="userAuthentication.get('mail')?.hasError('required')">Le nom d'utilisateur est requis
+        </mat-error>
+        <mat-error *ngIf="userAuthentication.get('mail')?.hasError('email')">Veuillez entrer une adresse email valide
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="mdp" type="password" id="mdp" name="mdp" required>
+        <mat-error *ngIf="userAuthentication.get('mdp')?.hasError('required')">Le mot de passe est requis</mat-error>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary">Se connecter</button>
+    </form>
+  </mat-card>
+</div>
+
+<mat-card>
+  <div class="box-login">
+    <p>Vous n'avez pas de compte ?</p>
+    <button mat-raised-button color="primary" routerLink="/inscription">S'inscrire</button>
+  </div>
+</mat-card>

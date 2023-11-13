@@ -3,18 +3,23 @@
   color: #fff;
   padding: 20px 0;
   position: relative;
-  bottom: 0;
-  width: 100%;
 }
+td, th{
+  text-align: left;
+  padding-left: 30px;
 
+}
 .footer .container {
   text-align: center;
   color: black;
 }
 
-
 .footer .container h4 {
   font-weight: bold;
+}
+
+h4{
+  font-size: 25px;
 }
 
 .footer ul {
