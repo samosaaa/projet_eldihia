@@ -7,6 +7,7 @@ export class ProductModel {
     public color: string;
     public type: string;
 
+
     constructor(id: string, name: string, price: number, image: string, size: string, color: string, type: string) {
         this.id = id;
         this.name = name;

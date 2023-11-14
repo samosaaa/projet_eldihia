@@ -25,11 +25,8 @@ export class HeaderComponent {
         console.log(this.users);
     }
 
-    public openSnackBar(message:string) {
-        this.snackbarService.openSnackBar(message);
-    }
     signOut():void{
-        this.openSnackBar("Vous allez être déconnecté!")
+        this.snackbarService.openSnackBar("Vous allez être déconnecté!")
         alert('Vous allez être déconnecté!')
         this.authService.logout();
         this.router.navigate(['']);

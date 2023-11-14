@@ -10,6 +10,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -33,6 +34,7 @@ import {CategoryKarakouComponent} from './category/category-karakou/category-kar
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {UserService} from "./services/user/user.service";
 import {AuthService} from "./services/authentication/auth.service";
+import {SnackbarService} from "./services/snackbar/snackbar.service";
 
 
 mockServer();
@@ -69,12 +71,14 @@ mockServer();
         MatCardModule,
         MatExpansionModule,
         MatGridListModule,
+        MatSnackBarModule,
     ],
     providers:
         [
             ProductsService,
             UserService,
             AuthService,
+            SnackbarService,
         ],
     bootstrap:
         [AppComponent]
