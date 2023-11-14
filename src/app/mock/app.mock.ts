@@ -15,8 +15,6 @@ export default () => {
       this.namespace = 'api';
       // Route pour obtenir la liste des produits
       this.get('/products', (schema => schema.db['productModels']));
-      // Route pour obtenir la liste des utilisateurs
-      this.get('/users', (schema => schema.db['users']));
 
       // Route pour obtenir un produit par son ID
       this.get('/products/:id', (schema, request) => {
@@ -64,16 +62,40 @@ export default () => {
       });
 
 
-      // USER CRUD \\
+      // USERS CRUD \\
+
+      // Route pour obtenir la liste des utilisateurs
+      this.get('/users', (schema => schema.db['users']));
+
 
       this.post('/register', (schema, request) => {
-        const user: UserModel = JSON.parse(request.requestBody);
-        console.log(user);
-        console.log(users);
-        console.log(userData);
-        schema.db['users'].insert(user);
-        schema.db['userData'].insert(user);
-        return user;
+        try {
+          const newUser = JSON.parse(request.requestBody);
+
+          // Vérifiez si l'utilisateur existe déjà
+          const existingUser = users.find(user => user.mail === newUser.mail);
+
+          if (existingUser) {
+            alert('Cet utilisateur existe déjà. Veuillez choisir une autre adresse e-mail.' );
+            return false;
+          }
+
+          if (!newUser.firstName || !newUser.lastName || !newUser.mail || !newUser.mdp || !newUser.role) {
+            alert('Les données de l\'utilisateur sont incomplètes.');
+          }else{
+            schema.db['users'].insert(newUser);
+            users.push(newUser);
+            console.log(users);
+
+            console.log('Inscription réussie :', newUser);
+            alert('Inscription réussie :');
+
+            return newUser;
+          }
+
+        } catch (error) {
+          alert('Erreur lors de l\'inscription :');
+        }
       });
 
       this.post('/login', (schema, request) => {

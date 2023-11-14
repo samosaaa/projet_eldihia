@@ -21,7 +21,6 @@ import {InscriptionComponent} from './inscription/inscription.component';
 import {ConnexionComponent} from './connexion/connexion.component';
 import {FavorisComponent} from "./favoris/favoris.component";
 import {AccueilComponent} from './accueil/accueil.component';
-import {ArticleComponent} from './article/article.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 
@@ -33,49 +32,54 @@ import {CategoryCaftanComponent} from './category/category-caftan/category-cafta
 import {CategoryChaouiComponent} from './category/category-chaoui/category-chaoui.component';
 import {CategoryKarakouComponent} from './category/category-karakou/category-karakou.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {UserService} from "./services/user/user.service";
+import {AuthService} from "./services/authentication/auth.service";
 
 
 mockServer();
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ConnexionComponent,
-    AccueilComponent,
-    ArticleComponent,
-    HeaderComponent,
-    FooterComponent,
-    InscriptionComponent,
-    FavorisComponent,
-    CreationComponent,
-    CategoryKabyleComponent,
-    CategoryCaftanComponent,
-    CategoryChaouiComponent,
-    CategoryKarakouComponent,
-    ProductDetailComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatSlideToggleModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatStepperModule,
-    MatCardModule,
-    MatExpansionModule,
-    MatGridListModule,
-  ],
-  providers:
-    [ProductsService],
-  bootstrap:
-    [AppComponent]
+    declarations: [
+        AppComponent,
+        ConnexionComponent,
+        AccueilComponent,
+        HeaderComponent,
+        FooterComponent,
+        InscriptionComponent,
+        FavorisComponent,
+        CreationComponent,
+        CategoryKabyleComponent,
+        CategoryCaftanComponent,
+        CategoryChaouiComponent,
+        CategoryKarakouComponent,
+        ProductDetailComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatSlideToggleModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatStepperModule,
+        MatCardModule,
+        MatExpansionModule,
+        MatGridListModule,
+    ],
+    providers:
+        [
+            ProductsService,
+            UserService,
+            AuthService,
+        ],
+    bootstrap:
+        [AppComponent]
 
 })
 

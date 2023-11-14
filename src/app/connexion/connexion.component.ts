@@ -27,11 +27,13 @@ export class ConnexionComponent implements OnInit{
   signIn(): void {
     const {mail, mdp} = this.userAuthentication.value;
     this.authService.login(mail, mdp);
-    //this.userService.isLogged(user);
+
     if (this.authService.isAuthenticatedUser()) {
+      alert('Bienvenue! Vous êtes bien authentifié');
       this.router.navigate(['']);
+
     } else {
-      console.log('Nom d\'utilisateur ou mot de passe incorrect.');
+      alert('Nom d\'utilisateur ou mot de passe incorrect.');
       this.router.navigate(['/connexion']);
 
     }

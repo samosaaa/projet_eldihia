@@ -3,44 +3,48 @@ import {map, Observable} from "rxjs";
 import {UserModel} from "../../models/user";
 import {HttpClient} from '@angular/common/http';
 import {users} from "../../mock/data";
+import {InscriptionForm} from "../../inscription/inscription-form.model";
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class AuthService {
-  public isAuthenticated = false;
-  private registeredUsers: { mail: string; mdp: string }[] = [];
+    public isAuthenticated = false;
+    private registeredUsers: { mail: string; mdp: string }[] = [];
 
-  constructor(private http: HttpClient) {
-  }
-
-  login(mail: string, mdp: string): void {
-    const user = users.find((u) => u.mail === mail && u.mdp === mdp);
-
-    if (user) {
-      console.log(user);
-      this.isAuthenticated = true;
+    constructor(private http: HttpClient) {
     }
-  }
 
-  logout(): void {
-    this.isAuthenticated = false;
-  }
+    login(mail: string, mdp: string): void {
+        const user = users.find((u) => u.mail === mail && u.mdp === mdp);
 
-  isAuthenticatedUser(): boolean {
-    return this.isAuthenticated;
-  }
+        if (user) {
+            console.log(user);
+            this.isAuthenticated = true;
+        }
+        this.http.post<UserModel>('/api/login', user);
 
-  register(firstName: string, lastName: string, mail: string, mdp: string, role: string): Observable<UserModel> {
-    const userToRegister = {
-      firstName,
-      lastName,
-      mail,
-      mdp,
-      role,
-    };
-    return this.http.post<UserModel>('api/register', userToRegister);
-  }
+    }
+
+
+    logout(): void {
+        this.isAuthenticated = false;
+    }
+
+    isAuthenticatedUser(): boolean {
+        return this.isAuthenticated;
+    }
+
+    register(firstName: string, lastName: string, mail: string, mdp: string, role: string): Observable<UserModel> {
+        const userToRegister = {
+            firstName,
+            lastName,
+            mail,
+            mdp,
+            role,
+        };
+        return this.http.post<UserModel>('/api/register', userToRegister);
+    }
 
 
 }

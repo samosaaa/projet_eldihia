@@ -4,6 +4,7 @@ import {ProductModel} from "../models/product";
 import {ActivatedRoute} from "@angular/router";
 import {first} from "rxjs";
 import {AuthService} from "../services/authentication/auth.service";
+import {UserModel} from "../models/user";
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -11,8 +12,7 @@ import {AuthService} from "../services/authentication/auth.service";
 })
 export class AccueilComponent{
   products: ProductModel[] = [];
-
-  constructor(private productsService: ProductsService, public authService: AuthService, private route:ActivatedRoute) {
+  constructor(private productsService: ProductsService, private route:ActivatedRoute) {
     this.loadData();
   }
     public loadData(){

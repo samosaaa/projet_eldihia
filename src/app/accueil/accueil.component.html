@@ -6,11 +6,3 @@
   </div>
 </div>
 
-
-<div *ngIf="authService.isAuthenticatedUser()">
-  <div *ngFor="let product of products; let i = index" class="product-card {{ i < 2 ? 'full-width' : '' }}">
-    <img [src]="product.image" alt="{{ product.name }}">
-    <p *ngIf="i === 1" class="custom-font">"Si une femme est mal habillée, on remarque sa robe, mais si elle est
-      impeccablement vêtue, c'est elle que l'on remarque."</p>
-  </div>
-</div>
