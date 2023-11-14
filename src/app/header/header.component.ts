@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {AuthService} from '../services/authentication/auth.service';
+import { Component } from '@angular/core';
+import { AuthService } from '../services/authentication/auth.service';
 import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import {Router, RouterModule,} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
@@ -9,9 +9,9 @@ import {UserModel} from "../models/user";
 import {UserService} from "../services/user/user.service";
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
     users: UserModel[] = [];

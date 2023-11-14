@@ -18,13 +18,8 @@ export default () => {
 
       // Route pour obtenir un produit par son ID
       this.get('/products/:id', (schema, request) => {
-        console.log("test");
         const productId = request.params['id'];
-        console.log("tsetsets" + productId);
-        console.log("fsfsrsr", schema.db['productModels'].findBy({id: '6'}).id);
-        console.log("je suis dans le mock" + schema.db['productModels'].findBy({id: '6'}));
         const test: ProductModel = schema.db['productModels'].findBy({id: productId});
-        console.log(test);
         return test;
       });
 
@@ -105,6 +100,63 @@ export default () => {
           return {success: true, message: 'Authentification réussie'};
         } else {
           return {success: false, message: 'Authentification échouée'};
+        }
+      });
+
+
+      this.post('/admin/products', (schema, request) => {
+        const attrs = JSON.parse(request.requestBody);
+        const product = schema.create('product', attrs);
+        return product;
+      });
+
+      this.put('/admin/products/:id', (schema, request) => {
+        const productId = request.params['id'];
+        const attrs = JSON.parse(request.requestBody);
+        const product = schema.db['productModels'].findBy({ id: productId });
+        if (product) {
+          product.update(attrs);
+          return product;
+        } else {
+          return { error: 'Product not found' };
+        }
+      });
+
+      this.delete('/admin/products/:id', (schema, request) => {
+        const productId = request.params['id'];
+        const product = schema.db['productModels'].findBy({ id: productId });
+        if (product) {
+          product.destroy();
+          return null; // Renvoyer une réponse sans contenu
+        } else {
+          return { error: 'Product not found' };
+        }
+      });
+
+      // Ajoutez une route pour l'incrémentation du stock
+      this.put('/products/increment/:id', (schema, request) => {
+        const productId = request.params['id'];
+        const product = schema.db['productModels'].findBy({ id: productId });
+
+        if (product) {
+          product.stock += 1;
+          return product;
+        } else {
+          return { error: 'Product not found' };
+        }
+      });
+
+
+      // Ajoutez une route pour la décrémentation du stock
+      this.put('/products/decrement/:id', (schema, request) => {
+        const productId = request.params['id'];
+        const product = schema.db['productModels'].findBy({ id: productId });
+
+        if (product && product.stock > 0) {
+          product.stock -= 1;
+          return product;
+        } else {
+          return { error: 'Product not found or stock is already at zero' };
         }
       });
 

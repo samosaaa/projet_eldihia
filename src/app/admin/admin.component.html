@@ -1,0 +1,9 @@
+<!-- admin.component.html -->
+<div *ngFor="let product of products$ | async">
+    <h3>{{ product.name }}</h3>
+    <p>Stock: {{ product.stock }}</p>
+    <button (click)="updateStock(product, 'increment')">+</button>
+    <button (click)="updateStock(product, 'decrement')">-</button>
+    <hr />
+</div>
+

@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../services/authentication/auth.service';
 import {FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
-import {users} from "../mock/data";
+import {UserService} from "../services/user/user.service";
 
 
 @Component({
@@ -16,7 +16,8 @@ export class ConnexionComponent implements OnInit{
   isAuthenticated !: boolean;
   userAuthentication !: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService,
+              private router: Router, private userService : UserService) {
     this.userAuthentication = this.formBuilder.group({
       mail: ['', [Validators.required, Validators.email]],
       mdp: ['', Validators.required],
@@ -27,13 +28,15 @@ export class ConnexionComponent implements OnInit{
   signIn(): void {
     const {mail, mdp} = this.userAuthentication.value;
     this.authService.login(mail, mdp);
-
+    //this.userService.isLogged(user);
     if (this.authService.isAuthenticatedUser()) {
-      alert('Bienvenue! Vous êtes bien authentifié');
-      this.router.navigate(['']);
+      if(this.userService.getUserByUsernameAndPassword(mail,mdp)){
+        this.userService.isLogged(this.userService.getUserByUsernameAndPassword(mail,mdp));
+      }
 
+      this.router.navigate(['']);
     } else {
-      alert('Nom d\'utilisateur ou mot de passe incorrect.');
+      console.log('Nom d\'utilisateur ou mot de passe incorrect.');
       this.router.navigate(['/connexion']);
 
     }
