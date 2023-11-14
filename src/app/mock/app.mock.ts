@@ -85,10 +85,7 @@ export default () => {
           }else{
             schema.db['users'].insert(newUser);
             users.push(newUser);
-            console.log(users);
-
             console.log('Inscription réussie :', newUser);
-            alert('Inscription réussie :');
 
             return newUser;
           }

@@ -37,13 +37,13 @@ export class InscriptionComponent {
                     this.userService.isLogged(user);
                     this.authService.login(mail, mdp);
                     if (this.authService.isAuthenticated) {
-                        alert('Inscription réussie');
+                        this.authService.logout();
+                        this.snackbarService.openSnackBar("Inscription réussie !", 5)
                         this.router.navigate(['/connexion']);
                     }
                 },
                 (error) => {
-                    console.log('Échec de l\'inscription', error);
-                    alert('Échec de l\'inscription');
+                    this.snackbarService.openSnackBar("Échec de l\'inscription !", 4)
                 }
             );
     }

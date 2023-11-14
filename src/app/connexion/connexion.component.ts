@@ -4,6 +4,7 @@ import {AuthService} from '../services/authentication/auth.service';
 import {FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
 import {users} from "../mock/data";
+import {SnackbarService} from "../services/snackbar/snackbar.service";
 
 
 @Component({
@@ -16,7 +17,11 @@ export class ConnexionComponent implements OnInit{
   isAuthenticated !: boolean;
   userAuthentication !: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  ngOnInit() {
+    this.initForm();
+  }
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, public snackbarService:SnackbarService) {
     this.userAuthentication = this.formBuilder.group({
       mail: ['', [Validators.required, Validators.email]],
       mdp: ['', Validators.required],
@@ -29,20 +34,15 @@ export class ConnexionComponent implements OnInit{
     this.authService.login(mail, mdp);
 
     if (this.authService.isAuthenticatedUser()) {
-      alert('Bienvenue! Vous êtes bien authentifié');
+      this.snackbarService.openSnackBar("Vous êtes bien authentifié. Bienvenue !")
       this.router.navigate(['']);
 
     } else {
-      alert('Nom d\'utilisateur ou mot de passe incorrect.');
+      this.snackbarService.openSnackBar("Nom d\'utilisateur ou mot de passe incorrect !")
       this.router.navigate(['/connexion']);
 
     }
   }
-
-
-    ngOnInit() {
-        this.initForm();
-    }
 
     initForm() {
         this.userAuthentication = this.formBuilder.group({

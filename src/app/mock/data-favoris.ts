@@ -1,7 +1,7 @@
-import { ProductModel } from "../models/product";
-import { UserModel } from "../models/user";
+import {FavorisModel} from "../models/favoris";
+import {ProductModel} from "../models/product";
 
-export const productData = [
+export const favorisData = [
     {
       id: '1',
       name: 'Yasmina',
@@ -177,18 +177,7 @@ export const productData = [
 
 ;
 
-export const productModels: ProductModel[] = productData.map(productData => {
-  return new ProductModel(productData.id, productData.name, productData.price, productData.image, productData.size, productData.color, productData.type);
-});
-export const userData = [
-  { firstName: 'Salah', lastName: 'Bouroubi', mail: 'sbouroubi@gmail.com', mdp: '1234', role: 'admin' },
-  { firstName: 'Samra', lastName: 'Abdul', mail: 'samra@admin.admin', mdp: 'samosa', role: 'admin' },
-  { firstName: 'John', lastName: 'Doe', mail: 'johndoe@gmail.com', mdp: 'password123', role: 'user' },
-  { firstName: 'Alice', lastName: 'Smith', mail: 'alicesmith@gmail.com', mdp: 'securepass', role: 'user' },
-  { firstName: 'Bob', lastName: 'Johnson', mail: 'bobjohnson@gmail.com', mdp: 'letmein', role: 'user' },
-];
-
-export const users : UserModel[] = userData.map(userData => {
-  return new UserModel(userData.firstName,userData.lastName,userData.mail,userData.mdp,userData.role)
+export const favorisModels: FavorisModel[] = favorisData.map(favorisData => {
+  return new FavorisModel(favorisData.id, favorisData.name, favorisData.price, favorisData.image, favorisData.size, favorisData.color, favorisData.type);
 });
 

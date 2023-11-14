@@ -1,10 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService} from '../services/authentication/auth.service';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
 import {Router} from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
 import {UserModel} from "../models/user";
 import {UserService} from "../services/user/user.service";
 import {SnackbarService} from "../services/snackbar/snackbar.service";
@@ -26,8 +22,7 @@ export class HeaderComponent {
     }
 
     signOut():void{
-        this.snackbarService.openSnackBar("Vous allez être déconnecté!")
-        alert('Vous allez être déconnecté!')
+        this.snackbarService.openSnackBar("Vous avez été déconnecté. A bientôt, Aurevoir !", 10)
         this.authService.logout();
         this.router.navigate(['']);
 
