@@ -3,9 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/authentication/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {users} from "../../mock/data";
 import {SnackbarService} from "../../services/snackbar/snackbar.service";
-import {UserService} from "../../services/user/user.service";
 
 
 @Component({
