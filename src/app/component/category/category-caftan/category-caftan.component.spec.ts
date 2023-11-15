@@ -1,21 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CategoryCaftanComponent } from './category-caftan.component';
+import {CategoryCaftanComponent} from './category-caftan.component';
 
 describe('CategoryCaftanComponent', () => {
-  let component: CategoryCaftanComponent;
-  let fixture: ComponentFixture<CategoryCaftanComponent>;
+    let component: CategoryCaftanComponent;
+    let fixture: ComponentFixture<CategoryCaftanComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [CategoryCaftanComponent]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [CategoryCaftanComponent]
+        });
+        fixture = TestBed.createComponent(CategoryCaftanComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(CategoryCaftanComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

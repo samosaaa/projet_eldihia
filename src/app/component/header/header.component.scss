@@ -14,10 +14,11 @@ a.nav-link{
   margin-top: -10px;
 }
 .navbar-brand {
-  padding: 0; /* Supprimez la marge interne autour du logo */
+  padding: 0;
 }
+
 .navbar-brand img {
-  max-height: 50px; /* Limitez la hauteur maximale de l'image à 100% de la hauteur de la barre de navigation */
+  max-height: 60px;
 }
 
 section {

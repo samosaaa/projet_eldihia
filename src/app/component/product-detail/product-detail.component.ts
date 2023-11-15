@@ -18,7 +18,7 @@ export class ProductDetailComponent implements OnInit{
 
     constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private authService : AuthService, private favoriService:FavorisService, private router: Router, private snackbarService:SnackbarService) { }
 
-    ngOnInit(): void {
+  ngOnInit(): void {
     const productId = this.route.snapshot.params['id'];
     this.productsService.getProductById(productId).subscribe(product => {
       this.product = product;

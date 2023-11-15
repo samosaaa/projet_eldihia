@@ -1,91 +1,96 @@
-.box-login{
+.box-login {
+  align-content: center;
 
-}
-mat-card{
-  padding: 40px 50px;
-  margin: 30px 400px;
-  display: flex;
+  .box-login {
 
-}
-
-/* CSS pour le formulaire d'inscription */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.form-box {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Style des champs de formulaire */
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-/* Style du bouton d'inscription */
-button {
-  width: 100%;
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Lien pour passer à la page de connexion */
-.link-to-login {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.link-to-login a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-.link-to-login a:hover {
-  text-decoration: underline;
-}
-
-/* Réduire la taille de la police pour les petits écrans */
-@media (max-width: 768px) {
-  .form-box {
-    width: 80%;
   }
-}
+
+  mat-card {
+    padding: 40px 50px;
+    margin: 30px 400px;
+    display: flex;
+
+  }
 
 
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-///// stepper \\\\\\
+  .form-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
 
-.mat-stepper-horizontal {
-  margin-top: 8px;
-}
-.mat-mdc-form-field {
-  margin-top: -20px;
-  display: flex;
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
 
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+
+  button {
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+
+  .link-to-login {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .link-to-login a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+
+  .link-to-login a:hover {
+    text-decoration: underline;
+  }
+
+
+  @media (max-width: 768px) {
+    .form-box {
+      width: 80%;
+    }
+  }
+
+
+  ///// stepper \\\\\\
+
+  .mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+
+  .mat-mdc-form-field {
+    margin-top: -20px;
+    display: flex;
+
+  }
 }

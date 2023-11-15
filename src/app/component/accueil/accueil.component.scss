@@ -31,23 +31,21 @@
   margin-top: 10px;
 }
 
-/* Style spécifique pour la première image (index 0) */
 .full-width {
-  grid-column: span 2; /* Pour occuper deux colonnes de la grille */
+  grid-column: span 2;
   width: 100%;
-  margin: 0; /* Supprimez la marge uniquement pour la première carte */
-  border: none; /* Supprimez la bordure uniquement pour la première carte */
+  margin: 0;
+  border: none;
 }
 
-/* Agrandissez la première image pour qu'elle prenne toute la largeur de la page */
 .full-width img {
-  width: 100%; /* Agrandissez la largeur de l'image pour qu'elle prenne toute la page */
-  max-width: none; /* Supprimez la limite de la largeur maximale pour cette image */
+  width: 100%;
+  max-width: none;
 }
 
 .custom-font {
   font-family: 'Georgia', serif;
-  font-size : larger;
+  font-size: larger;
   font-style: oblique;
   font-weight: bold;
 }

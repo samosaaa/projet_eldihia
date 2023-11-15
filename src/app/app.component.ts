@@ -8,13 +8,14 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent{
-  title = 'el-dihia';
-  public products : ProductModel []= [];
+export class AppComponent {
+    title: string = 'el-dihia';
+    public products: ProductModel [] = [];
 
-  constructor(private productService : ProductsService) {
-  productService.getProducts().subscribe((data: ProductModel[]) => {
-      });
-  }
+    constructor(private productService: ProductsService) {
+        productService.getProducts().subscribe((data: ProductModel[]) => {
+        });
+    }
+
+
 }
-

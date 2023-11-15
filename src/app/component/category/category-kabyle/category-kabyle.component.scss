@@ -9,17 +9,20 @@
   font-weight: bold;
   color: #333;
 }
+
 .category-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
 }
-.category-name{
+
+.category-name {
   text-align: center;
 }
+
 .category-card {
-  flex: 0 0 calc(25% - 20px); /* Pour afficher 4 éléments par ligne avec un espacement de 20px */
+  flex: 0 0 calc(25% - 20px);
   margin: 10px;
   text-align: center;
 }

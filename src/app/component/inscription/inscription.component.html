@@ -1,47 +1,50 @@
 <div class="box-sign">
-  <mat-card>
-    <h2>Inscription</h2>
-    <mat-divider></mat-divider>
-    <br>
-    <form [formGroup]="inscriptionForm" (ngSubmit)="signUp()" class="needs-validation" novalidate>
+    <mat-card>
+        <h2>Inscription</h2>
+        <mat-divider></mat-divider>
+        <br>
+        <form [formGroup]="inscriptionForm" (ngSubmit)="signUp()" class="needs-validation" novalidate>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Prénom</mat-label>
-        <input matInput formControlName="firstName" required>
-      </mat-form-field>
-      <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Prénom</mat-label>
+                <input matInput formControlName="firstName" required>
+            </mat-form-field>
+            <br>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Nom</mat-label>
-        <input matInput formControlName="lastName" required>
-      </mat-form-field>
-      <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="lastName" required>
+            </mat-form-field>
+            <br>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="mail" required>
-        <mat-error *ngIf="inscriptionForm.get('mail')?.hasError('required') && inscriptionForm.get('mail')?.touched">
-          L'email est requis.
-        </mat-error>
-        <mat-error *ngIf="inscriptionForm.get('mail')?.hasError('email') && inscriptionForm.get('mail')?.touched">
-          Veuillez entrer une adresse email valide.
-        </mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Mot de Passe</mat-label>
-        <input matInput type="password" formControlName="mdp" required>
-      </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="mail" required>
+                <mat-error
+                        *ngIf="inscriptionForm.get('mail')?.hasError('required') && inscriptionForm.get('mail')?.touched">
+                    L'email est requis.
+                </mat-error>
+                <mat-error
+                        *ngIf="inscriptionForm.get('mail')?.hasError('email') && inscriptionForm.get('mail')?.touched">
+                    Veuillez entrer une adresse email valide.
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Mot de Passe</mat-label>
+                <input matInput type="password" formControlName="mdp" required>
+            </mat-form-field>
 
       <button aria-label="snack-bar" type="submit" mat-raised-button color="primary">S'inscrire</button>
     </form>
   </mat-card>
 </div>
+
 <mat-card>
-  <div class="box-sign">
-    <p>Vous avez déjà un compte ?</p>
-    <button mat-raised-button color="primary" routerLink="/connexion">Se connecter</button>
-  </div>
+    <div class="box-sign">
+        <p>Vous avez déjà un compte ?</p>
+        <button mat-raised-button color="primary" routerLink="/connexion">Se connecter</button>
+    </div>
 </mat-card>
 
 

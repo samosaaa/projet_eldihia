@@ -8,10 +8,11 @@ import {ProductsService} from "../../services/products/products.service";
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent implements OnInit{
+export class AdminComponent implements OnInit {
     public products: ProductModel[] = [];
 
-    constructor(private productService: ProductsService) {}
+    constructor(private productService: ProductsService) {
+    }
 
     ngOnInit(): void {
         // Charger la liste des produits depuis le service de produit

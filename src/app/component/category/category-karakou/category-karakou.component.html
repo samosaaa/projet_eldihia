@@ -1,12 +1,12 @@
 <div class="page-title">
-  <h1>Karakou</h1>
+    <h1>Karakou</h1>
 </div>
 <div class="category-container">
-  <div class="category-card" *ngFor="let robe of robesKarakou">
-    <a [routerLink]="['/product', robe.id]">
-      <img [src]="robe.image" alt="{{ robe.name }}">
-    </a>
-    <p class="category-title">{{ robe.name }}</p>
-  </div>
+    <div class="category-card" *ngFor="let robe of robesKarakou">
+        <a [routerLink]="['/product', robe.id]">
+            <img [src]="robe.image" alt="{{ robe.name }}">
+        </a>
+        <p class="category-title">{{ robe.name }}</p>
+    </div>
 </div>
 

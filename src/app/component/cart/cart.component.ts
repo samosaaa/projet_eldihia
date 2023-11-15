@@ -8,8 +8,8 @@ import {SnackbarService} from "../../services/snackbar/snackbar.service";
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit{
-    cartItems: ProductModel[] | undefined;
+export class CartComponent implements OnInit {
+    public cartItems: ProductModel[] | undefined;
 
     constructor(private cartService: CartService, private snackbarService: SnackbarService ) {
     }

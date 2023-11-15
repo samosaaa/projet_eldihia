@@ -1,7 +1,7 @@
 // connexion.component.ts
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/authentication/auth.service';
-import {FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {users} from "../../mock/data";
 import {SnackbarService} from "../../services/snackbar/snackbar.service";
@@ -14,9 +14,8 @@ import {UserService} from "../../services/user/user.service";
   styleUrls: ['./connexion.component.scss'],
 
 })
-export class ConnexionComponent implements OnInit{
-  isAuthenticated !: boolean;
-  userAuthentication !: FormGroup;
+export class ConnexionComponent implements OnInit {
+    public userAuthentication !: FormGroup;
 
   ngOnInit() {
     this.initForm();
@@ -42,8 +41,8 @@ export class ConnexionComponent implements OnInit{
       this.snackbarService.openSnackBar("Nom d\'utilisateur ou mot de passe incorrect !")
       this.router.navigate(['/connexion']);
 
+        }
     }
-  }
 
     initForm() {
         this.userAuthentication = this.formBuilder.group({
