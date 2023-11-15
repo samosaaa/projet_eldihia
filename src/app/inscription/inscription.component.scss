@@ -3,7 +3,9 @@
 }
 mat-card{
   padding: 40px 50px;
-  margin: 30px 150px;
+  margin: 30px 400px;
+  display: flex;
+
 
 }
 
@@ -68,6 +70,13 @@ button:hover {
 .link-to-login a:hover {
   text-decoration: underline;
 }
+
+.mat-mdc-form-field {
+  margin-top: -20px;
+  display: flex;
+
+}
+
 
 /* Réduire la taille de la police pour les petits écrans */
 @media (max-width: 768px) {
