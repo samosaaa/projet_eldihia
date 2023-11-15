@@ -1,12 +1,25 @@
 <div class="page-title">
     <h1>Chaoui</h1>
 </div>
+
+<div class="filter-container">
+    <select (change)="onSizeChange($event)">
+        <option value="" selected disabled>Choisir une taille</option>
+        <option *ngFor="let size of availableSizes" [value]="size">{{ size }}</option>
+    </select>
+
+    <select (change)="onColorChange($event)">
+        <option value="" selected disabled>Choisir une couleur</option>
+        <option *ngFor="let color of availableColors" [value]="color">{{ color }}</option>
+    </select>
+    <button (click)="resetFilters()">Réinitialiser les filtres</button>
+</div>
+
 <div class="category-container">
-    <div class="category-card" *ngFor="let robe of robesChaoui">
+    <div class="category-card" *ngFor="let robe of robesFiltrees">
         <a [routerLink]="['/product', robe.id]">
             <img [src]="robe.image" alt="{{ robe.name }}">
         </a>
         <p class="category-title">{{ robe.name }}</p>
     </div>
 </div>
-

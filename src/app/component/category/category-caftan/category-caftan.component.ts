@@ -9,15 +9,51 @@ import {ProductsService} from "../../../services/products/products.service";
 })
 export class CategoryCaftanComponent implements OnInit {
 
-    public robesCaftan: ProductModel [] = []
+    public robesCaftan: ProductModel [] = [];
+    public robesFiltrees : ProductModel[]=[];
+    public selectedSize: string | null = null;
+    public selectedColor: string | null = null;
+
+    public availableSizes: string[] = ['S', 'M', 'L', 'XL'];
+    public availableColors: string[] = ['blanc', 'bleue', 'verte', 'rouge'];
 
     constructor(private productsService: ProductsService) {
     }
 
     ngOnInit(): void {
         this.productsService.getProducts().subscribe(data => {
-            // Filtrer les produits de type 1
             this.robesCaftan = data.filter(product => product.type === 'caftan');
+            this.robesFiltrees = this.robesCaftan;
         });
+    }
+
+    filterDresses(): void {
+        // Méthode pour filtrer les robes en fonction de la taille et de la couleur sélectionnées
+        this.robesFiltrees = this.robesCaftan.filter((robeCaftan) => {
+            if (this.selectedSize && robeCaftan.size !== this.selectedSize) {
+                return false;
+            }
+            if (this.selectedColor && robeCaftan.color !== this.selectedColor) {
+                return false;
+            }
+            return true;
+        });
+    }
+    // Méthodes pour déclencher le filtrage en réponse aux changements de sélection
+    onSizeChange(event: Event):void {
+        const target = event.target as HTMLSelectElement;
+        this.selectedSize = target.value;
+        this.filterDresses();
+    }
+
+    onColorChange(event: Event):void {
+        const target = event.target as HTMLSelectElement;
+        this.selectedColor = target.value;
+        this.filterDresses();
+    }
+    resetFilters():void {
+        this.selectedSize = '';
+        this.selectedColor = '';
+        this.filterDresses();
     }
 }
