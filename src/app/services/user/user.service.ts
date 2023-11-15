@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, Subject} from "rxjs";
+import {map, Observable, Subject} from "rxjs";
 import {UserModel} from "../../models/user";
 import {users} from "../../mock/data";
 
@@ -27,14 +27,26 @@ export class UserService {
 
   //    \\
   public userSubject: Subject<UserModel | null> = new Subject<UserModel | null>();
-  public isLogged(userLogged: UserModel): void {
+  public isLogged(userLogged: UserModel | undefined): void {
     sessionStorage.setItem("userLogged", JSON.stringify(userLogged));
-    this.userSubject.next(userLogged);
+    if(userLogged){
+      this.userSubject.next(userLogged);
+    }
+
+  }
+  public getLoggedUser(): UserModel | null {
+    const userLoggedString = sessionStorage.getItem("userLogged");
+    return userLoggedString ? JSON.parse(userLoggedString) : null;
   }
 
-  public getDeconnected(): void {
-    sessionStorage.removeItem("userLogged");
-    this.userSubject.next(null);
+  public getDeconnected(){
+    sessionStorage.setItem("userLogged","");
   }
+  public isAdmin(): boolean{
 
+      if(this.getLoggedUser()){
+        return this.getLoggedUser()?.role === "admin";
+      }
+      return false;
+  }
 }

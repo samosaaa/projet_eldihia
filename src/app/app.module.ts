@@ -13,49 +13,51 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {InscriptionComponent} from './inscription/inscription.component';
 import {ConnexionComponent} from './connexion/connexion.component';
+import {FavorisComponent} from "./favoris/favoris.component";
 import {AccueilComponent} from './accueil/accueil.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FavorisComponent} from "./favoris/favoris.component";
-
-
-import {ProductsService} from "./services/products/products.service";
-import mockServer from './mock/app.mock';
 import {CreationComponent} from './creation/creation.component';
 import {CategoryKabyleComponent} from './category/category-kabyle/category-kabyle.component';
 import {CategoryCaftanComponent} from './category/category-caftan/category-caftan.component';
 import {CategoryChaouiComponent} from './category/category-chaoui/category-chaoui.component';
 import {CategoryKarakouComponent} from './category/category-karakou/category-karakou.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
-import {UserService} from "./services/user/user.service";
-import {AuthService} from "./services/authentication/auth.service";
+import { AdminComponent } from './admin/admin.component';
 import {MaisonComponent} from './maison/maison.component';
 import {CartComponent} from './cart/cart.component';
+
+import {ProductsService} from "./services/products/products.service";
+import mockServer from './mock/app.mock';
+import {UserService} from "./services/user/user.service";
+import {AuthService} from "./services/authentication/auth.service";
 
 mockServer();
 
 @NgModule({
     declarations: [
         AppComponent,
-        InscriptionComponent,
         ConnexionComponent,
         AccueilComponent,
         HeaderComponent,
         FooterComponent,
+        InscriptionComponent,
+        FavorisComponent,
         CreationComponent,
         CategoryKabyleComponent,
         CategoryCaftanComponent,
         CategoryChaouiComponent,
         CategoryKarakouComponent,
         ProductDetailComponent,
-        FavorisComponent,
         MaisonComponent,
-        CartComponent
+        CartComponent,
+        AdminComponent
     ],
     imports: [
         BrowserModule,
@@ -75,9 +77,16 @@ mockServer();
         MatExpansionModule,
         MatGridListModule,
     ],
-    providers: [ProductsService, UserService,
-        AuthService,],
-    bootstrap: [AppComponent]
+    providers:
+        [
+            ProductsService,
+            UserService,
+            AuthService,
+        ],
+    bootstrap:
+        [AppComponent]
+
 })
+
 export class AppModule {
 }

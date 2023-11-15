@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ProductsService} from "../services/products/products.service";
 import {ProductModel} from "../models/product";
 import {CartService} from "../services/cart/cart.service";
+import {AuthService} from "../services/authentication/auth.service";
 
 @Component({
   selector: 'app-product-detail',
@@ -11,7 +12,7 @@ import {CartService} from "../services/cart/cart.service";
 })
 export class ProductDetailComponent implements OnInit{
   public product : ProductModel | undefined;
-  constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService) { }
+  constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private authService : AuthService,private router: Router) { }
 
   ngOnInit(): void {
     const productId = this.route.snapshot.params['id'];
@@ -22,7 +23,12 @@ export class ProductDetailComponent implements OnInit{
 
   addToCart() {
     if (this.product) {
-      this.cartService.addToCart(this.product);
+      if (this.authService.isAuthenticatedUser()){
+        this.cartService.addToCart(this.product);
+      }
+      else {
+        this.router.navigate(['/connexion']);
+      }
     }
   }
 }

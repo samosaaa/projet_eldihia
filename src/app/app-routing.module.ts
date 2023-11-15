@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AccueilComponent} from "./accueil/accueil.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
 import {InscriptionComponent} from "./inscription/inscription.component";
@@ -12,6 +12,8 @@ import {CategoryKarakouComponent} from "./category/category-karakou/category-kar
 import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {MaisonComponent} from "./maison/maison.component";
 import {CartComponent} from "./cart/cart.component";
+import {AdminGuard} from "./admin.guard";
+import {AdminComponent} from "./admin/admin.component";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},
@@ -26,6 +28,11 @@ const routes: Routes = [
   {path: 'product/:id', component: ProductDetailComponent},
   {path:'maison',component:MaisonComponent},
   {path:'panier',component:CartComponent},
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AdminGuard]
+  },
   {path: '**', component: AccueilComponent},
 
 ];
@@ -34,4 +41,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}
