@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AccueilComponent} from "./accueil/accueil.component";
-import {ConnexionComponent} from "./connexion/connexion.component";
-import {InscriptionComponent} from "./inscription/inscription.component";
-import {FavorisComponent} from "./favoris/favoris.component";
-import {CreationComponent} from "./creation/creation.component";
+import {AccueilComponent} from "./component/accueil/accueil.component";
+import {ConnexionComponent} from "./component/connexion/connexion.component";
+import {InscriptionComponent} from "./component/inscription/inscription.component";
+import {FavorisComponent} from "./component/favoris/favoris.component";
+import {CreationComponent} from "./component/creation/creation.component";
 import {CategoryKabyleComponent} from "./category/category-kabyle/category-kabyle.component";
 import {CategoryCaftanComponent} from "./category/category-caftan/category-caftan.component";
 import {CategoryChaouiComponent} from "./category/category-chaoui/category-chaoui.component";
 import {CategoryKarakouComponent} from "./category/category-karakou/category-karakou.component";
-import {ProductDetailComponent} from "./product-detail/product-detail.component";
+import {ProductDetailComponent} from "./component/product-detail/product-detail.component";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},

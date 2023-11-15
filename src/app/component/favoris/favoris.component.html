@@ -1,0 +1,33 @@
+<div class="box-login">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Liste des Favoris
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngIf="favoriteItems && favoriteItems.length > 0 else emptyFavorite">
+                <div *ngFor="let favoris of favoriteItems">
+                    <mat-card>
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{ favoris.name }}</mat-card-title>
+                            <mat-card-subtitle>{{ favoris.price | currency:'EUR' }}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image [src]="favoris.image" alt="{{ favoris.name }}">
+                    </mat-card>
+                </div>
+            </div>
+
+            <ng-template #emptyFavorite>
+                <p>Aucun favori pour le moment.</p>
+            </ng-template>
+
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
+</div>
+
+

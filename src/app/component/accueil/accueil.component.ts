@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import { ProductsService} from "../services/products/products.service";
-import {ProductModel} from "../models/product";
+import { ProductsService} from "../../services/products/products.service";
+import {ProductModel} from "../../models/product";
 import {ActivatedRoute} from "@angular/router";
 import {first} from "rxjs";
-import {AuthService} from "../services/authentication/auth.service";
-import {UserModel} from "../models/user";
+import {AuthService} from "../../services/authentication/auth.service";
+import {UserModel} from "../../models/user";
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',

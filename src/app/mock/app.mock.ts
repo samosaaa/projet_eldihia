@@ -34,6 +34,19 @@ export default () => {
         return schema.create('product', attrs);
       });
 
+      this.get('/favorite-products', (schema) => {
+        return schema.db['productModels'].where({ favorite: true });
+      });
+
+      this.put('/products/:id/toggle-favorite', (schema, request) => {
+        const productId = request.params['id'];
+        const product = schema.db['productModels'].find(productId);
+        product.update({ favorite: !product.favorite });
+        return product;
+      });
+
+
+
       // Route pour mettre à jour un produit (si nécessaire)
       this.put('/products/:id', (schema, request) => {
         const productId = request.params['id'];
