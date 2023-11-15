@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -72,6 +73,7 @@ mockServer();
         MatExpansionModule,
         MatGridListModule,
         MatSnackBarModule,
+        MatToolbarModule,
     ],
     providers:
         [
