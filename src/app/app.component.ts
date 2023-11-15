@@ -13,7 +13,6 @@ export class AppComponent{
 
   constructor(private productService : ProductsService) {
   productService.getProducts().subscribe((data: ProductModel[]) => {
-          console.log("Les produits : ", data);
       });
   }
 

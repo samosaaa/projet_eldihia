@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AccueilComponent} from "./accueil/accueil.component";
-import {ConnexionComponent} from "./connexion/connexion.component";
-import {InscriptionComponent} from "./inscription/inscription.component";
-import {FavorisComponent} from "./favoris/favoris.component";
-import {CreationComponent} from "./creation/creation.component";
-import {CategoryKabyleComponent} from "./category/category-kabyle/category-kabyle.component";
-import {CategoryCaftanComponent} from "./category/category-caftan/category-caftan.component";
-import {CategoryChaouiComponent} from "./category/category-chaoui/category-chaoui.component";
-import {CategoryKarakouComponent} from "./category/category-karakou/category-karakou.component";
-import {ProductDetailComponent} from "./product-detail/product-detail.component";
-import {MaisonComponent} from "./maison/maison.component";
-import {CartComponent} from "./cart/cart.component";
-import {AdminGuard} from "./admin.guard";
-import {AdminComponent} from "./admin/admin.component";
+import {AccueilComponent} from "./component/accueil/accueil.component";
+import {ConnexionComponent} from "./component/connexion/connexion.component";
+import {InscriptionComponent} from "./component/inscription/inscription.component";
+import {FavorisComponent} from "./component/favoris/favoris.component";
+import {CreationComponent} from "./component/creation/creation.component";
+import {CategoryKabyleComponent} from "./component/category/category-kabyle/category-kabyle.component";
+import {CategoryCaftanComponent} from "./component/category/category-caftan/category-caftan.component";
+import {CategoryChaouiComponent} from "./component/category/category-chaoui/category-chaoui.component";
+import {CategoryKarakouComponent} from "./component/category/category-karakou/category-karakou.component";
+import {ProductDetailComponent} from "./component/product-detail/product-detail.component";
+import {MaisonComponent} from "./component/maison/maison.component";
+import {CartComponent} from "./component/cart/cart.component";
+import {AdminGuard} from "./guard/admin.guard";
+import {AdminComponent} from "./component/admin/admin.component";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},

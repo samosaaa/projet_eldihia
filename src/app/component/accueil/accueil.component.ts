@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import { ProductsService} from "../services/products/products.service";
-import {ProductModel} from "../models/product";
+import { ProductsService} from "../../services/products/products.service";
+import {ProductModel} from "../../models/product";
 import {ActivatedRoute} from "@angular/router";
 import {first} from "rxjs";
-import {AuthService} from "../services/authentication/auth.service";
-import {UserModel} from "../models/user";
+import {AuthService} from "../../services/authentication/auth.service";
+import {UserModel} from "../../models/user";
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -17,7 +17,6 @@ export class AccueilComponent{
   }
     public loadData(){
         this.productsService.getProducts().subscribe(data =>(this.products=data));
-        console.log(this.products);
     }
 
     protected readonly first = first;

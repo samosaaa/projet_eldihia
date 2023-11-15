@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {AuthService} from '../services/authentication/auth.service';
+import {AuthService} from '../../services/authentication/auth.service';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Router} from '@angular/router';
-import {UserService} from "../services/user/user.service";
-import {users} from "../mock/data";
-import {UserModel} from "../models/user";
+import {UserService} from "../../services/user/user.service";
+import {users} from "../../mock/data";
+import {UserModel} from "../../models/user";
 import { InscriptionForm } from "./inscription-form.model";
 
 @Component({
@@ -35,7 +35,6 @@ export class InscriptionComponent {
         this.authService.register(firstName, lastName, mail, mdp, role)
             .subscribe(
                 (user) => {
-                    console.log(users);
 
                     this.userService.isLogged(user);
                     this.authService.login(mail, mdp);
@@ -45,7 +44,6 @@ export class InscriptionComponent {
                     }
                 },
                 (error) => {
-                    console.log('Échec de l\'inscription', error);
                     alert('Échec de l\'inscription');
                 }
             );

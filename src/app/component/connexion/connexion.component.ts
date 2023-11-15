@@ -1,9 +1,9 @@
 // connexion.component.ts
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../services/authentication/auth.service';
+import {AuthService} from '../../services/authentication/auth.service';
 import {FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
-import {UserService} from "../services/user/user.service";
+import {UserService} from "../../services/user/user.service";
 
 
 @Component({
@@ -36,7 +36,6 @@ export class ConnexionComponent implements OnInit{
 
       this.router.navigate(['']);
     } else {
-      console.log('Nom d\'utilisateur ou mot de passe incorrect.');
       this.router.navigate(['/connexion']);
 
     }

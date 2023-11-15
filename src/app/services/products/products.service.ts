@@ -22,7 +22,6 @@ export class ProductsService {
 
     const url = `${this.baseUrl}/${id}`;
     this.http.get<ProductModel>(url).subscribe((data)=>{
-      console.log(data)
     });
     // URL de la requête pour obtenir un produit par son ID
     return this.http.get<ProductModel>(url);
