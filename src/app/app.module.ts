@@ -36,13 +36,11 @@ import {MaisonComponent} from './component/maison/maison.component';
 import {CartComponent} from './component/cart/cart.component';
 
 import {ProductsService} from "./services/products/products.service";
-import mockServer from './mock/app.mock';
 import {UserService} from "./services/user/user.service";
 import {AuthService} from "./services/authentication/auth.service";
 import {SnackbarService} from "./services/snackbar/snackbar.service";
 
 
-mockServer();
 
 @NgModule({
     declarations: [
