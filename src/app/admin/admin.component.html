@@ -1,9 +1,9 @@
-<!-- admin.component.html -->
-<div *ngFor="let product of products$ | async">
-    <h3>{{ product.name }}</h3>
-    <p>Stock: {{ product.stock }}</p>
-    <button (click)="updateStock(product, 'increment')">+</button>
-    <button (click)="updateStock(product, 'decrement')">-</button>
-    <hr />
+<div class="admin-container">
+    <h2>Liste des Produits (Stock)</h2>
+    <ul>
+        <li *ngFor="let product of products">
+            <img [src]="product.image" alt="{{ product.name }}" class="admin-product-image">
+            <span>{{ product.name }} (stock :{{ product.stock }})</span>
+        </li>
+    </ul>
 </div>
-

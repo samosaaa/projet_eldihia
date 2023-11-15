@@ -9,6 +9,7 @@ import {users} from "../../mock/data";
 })
 export class AuthService {
   public isAuthenticated = false;
+  public isAdmin = false;
 
   constructor(private http: HttpClient) {
   }
@@ -17,8 +18,11 @@ export class AuthService {
     const user = users.find((u) => u.mail === mail && u.mdp === mdp);
 
     if (user) {
-      console.log(user);
       this.isAuthenticated = true;
+    }
+
+    if(user?.role=='admin'){
+      this.isAdmin = true;
     }
   }
 
@@ -28,6 +32,10 @@ export class AuthService {
 
   isAuthenticatedUser(): boolean {
     return this.isAuthenticated;
+  }
+
+  isAdminUser():boolean{
+    return this.isAdmin;
   }
 
   register(firstName: string, lastName: string, mail: string, mdp: string, role: string): Observable<UserModel> {

@@ -1,7 +1,6 @@
-import {Component} from '@angular/core';
-import {AdminProductsService} from '../services/adminProducts/admin-products.service';
+import {Component, OnInit} from '@angular/core';
 import {ProductModel} from "../models/product";
-import {map, Observable, of, switchMap, tap} from "rxjs";
+import {ProductsService} from "../services/products/products.service";
 
 
 @Component({
@@ -9,26 +8,16 @@ import {map, Observable, of, switchMap, tap} from "rxjs";
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent {
-    public products$: Observable<ProductModel[]> | undefined;
+export class AdminComponent implements OnInit{
+    public products: ProductModel[] = [];
 
-    constructor(private adminProductsService: AdminProductsService) {
-    }
+    constructor(private productService: ProductsService) {}
 
     ngOnInit(): void {
-        this.loadProducts();
-    }
-
-    loadProducts(): void {
-        this.products$ = this.adminProductsService.getAllProducts();
-    }
-
-// admin.component.ts
-    updateStock(product: ProductModel, action: 'increment' | 'decrement'): void {
-        this.adminProductsService.updateStock(product.id, action).subscribe(() => {
-            this.loadProducts();  // Actualiser la liste des produits après l'incrémentation/décrémentation
+        // Charger la liste des produits depuis le service de produit
+        this.productService.getProducts().subscribe((products) => {
+            this.products = products;
         });
     }
-
 }
 
