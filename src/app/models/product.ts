@@ -1,3 +1,5 @@
+import {ReviewModel} from "./review";
+
 export class ProductModel {
     public id: string;
     public name: string;
@@ -6,9 +8,11 @@ export class ProductModel {
     public size: string;
     public color: string;
     public type: string;
-    public stock: number;
+    public stock:number;
 
-    constructor(id: string, name: string, price: number, image: string, size: string, color: string, type: string, stock: number) {
+    public reviews: ReviewModel[] = [];
+
+    constructor(id: string, name: string, price: number, image: string, size: string, color: string, type: string,stock:number,reviews: ReviewModel[] = []) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -17,5 +21,6 @@ export class ProductModel {
         this.color = color;
         this.type = type;
         this.stock = stock;
+        this.reviews = reviews;
     }
 }

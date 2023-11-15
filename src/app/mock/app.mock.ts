@@ -1,12 +1,12 @@
 import {Server} from 'miragejs';
-import {productModels, users} from './data';
+import {productModels, users,reviews} from './data';
 import {ProductModel} from "../models/product";
 
 export default (): void => {
 
     new Server({
         seeds(server) {
-            server.db.loadData({productModels, users});
+            server.db.loadData({productModels, users,reviews});
         },
 
         routes() {
@@ -79,8 +79,8 @@ export default (): void => {
                         schema.db['users'].insert(newUser);
                         users.push(newUser);
 
-            return newUser;
-          }
+                        return newUser;
+                    }
 
                 } catch (error) {
                     alert('Erreur lors de l\'inscription :');
@@ -152,6 +152,38 @@ export default (): void => {
                 } else {
                     return {error: 'Product not found or stock is already at zero'};
                 }
+            });
+
+            //Route pour commentaires
+            this.get('/reviews',schema=>schema.db['reviews'])
+            this.get('/reviews/:id',(schema,request)=>{
+                const productId:string = request.params['id'];
+                const productFind: ProductModel = schema.db['productModels'].findBy({id: productId});
+                return schema.db['reviews'].where({productId:productFind.id})
+            });
+
+            this.get('/reviews/user/:firstName',(schema,request)=>{
+                const userFind:string = request.params['firstName'];
+                return schema.db['reviews'].where({user:userFind})
+            });
+
+            this.post('/reviews',(schema,request)=>{
+                const review:string = JSON.parse(request.requestBody);
+                return schema.db['reviews'].insert(review);
+            });
+
+            this.put('/reviews/:idReviews',(schema,request)=>{
+                const reviewId:string = request.params['id'];
+                const newReview = JSON.parse(request.requestBody);
+                const reviewFind = schema.db['reviews'].findBy({id: reviewId});
+                if (reviewFind) {
+                    // Mettez à jour les propriétés de l'avis avec les nouvelles valeurs
+                    reviewFind.update(newReview);
+                    return reviewFind;
+                } else {
+                    return { error: 'Review not found' };
+                }
+
             });
 
         }
