@@ -1,34 +1,33 @@
 <div class="box-login">
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        This is the expansion title
-      </mat-panel-title>
-      <mat-panel-description>
-        This is a summary of the content
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>This is the primary content of the panel.</p>
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile>1</mat-grid-tile>
-      <mat-grid-tile>2</mat-grid-tile>
-      <mat-grid-tile>3</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
-    </mat-grid-list>
-  </mat-expansion-panel>
-</mat-accordion>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Liste des Favoris
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngIf="favoriteItems && favoriteItems.length > 0 else emptyFavorite">
+                <div *ngFor="let favoris of favoriteItems">
+                    <mat-card>
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{ favoris.name }}</mat-card-title>
+                            <mat-card-subtitle>{{ favoris.price | currency:'EUR' }}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image [src]="favoris.image" alt="{{ favoris.name }}">
+                    </mat-card>
+                </div>
+            </div>
+
+            <ng-template #emptyFavorite>
+                <p>Aucun favori pour le moment.</p>
+            </ng-template>
+
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
 </div>
 
 

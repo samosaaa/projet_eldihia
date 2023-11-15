@@ -1,9 +1,10 @@
 .box-login{
-  align-content: center;
+
 }
 mat-card{
   padding: 40px 50px;
-  margin: 30px 150px;
+  margin: 30px 400px;
+  display: flex;
 
 }
 
@@ -83,7 +84,8 @@ button:hover {
 .mat-stepper-horizontal {
   margin-top: 8px;
 }
-
 .mat-mdc-form-field {
-  margin-top: 16px;
+  margin-top: -20px;
+  display: flex;
+
 }

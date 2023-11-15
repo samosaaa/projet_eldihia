@@ -9,12 +9,15 @@
 
             <ng-container *ngIf="authService.isAuthenticatedUser(); else notAuthenticatedBlock">
                 <ng-container *ngIf="authService.isAdminUser(); else notAdminBlock">
-                    <li class="nav-item"><a class="nav-link" [routerLink]="['/admin']">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
+                                            [routerLink]="['/admin']">Admin</a></li>
                 </ng-container>
-                <li class="nav-item"><a class="nav-link" [routerLink]="['/favoris']">
+                <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
+                                        [routerLink]="['/favoris']">
                     <mat-icon>favorite</mat-icon>
                 </a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/panier">
+                <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
+                                        [routerLink]="['/panier']">
                     <mat-icon>shopping_cart</mat-icon>
                 </a></li>
                 <li class="nav-item"><a class="nav-link" (click)="signOut()">
@@ -28,7 +31,8 @@
             </ng-template>
 
             <ng-template #notAdminBlock>
-                <li class="nav-item"><a class="nav-link" [routerLink]="['/connexion']">
+                <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
+                                        [routerLink]="['/connexion']">
                     <mat-icon>account_circle</mat-icon>
                 </a></li>
             </ng-template>
@@ -37,3 +41,4 @@
 </nav>
 
 <mat-divider></mat-divider>
+

@@ -81,8 +81,6 @@ export default () => {
             schema.db['users'].insert(newUser);
             users.push(newUser);
 
-            alert('Inscription réussie :');
-
             return newUser;
           }
 

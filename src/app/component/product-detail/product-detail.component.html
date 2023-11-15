@@ -7,6 +7,15 @@
         <li><strong>Prix :</strong> {{ product?.price | currency:'EUR' }}</li>
         <li><strong>Taille :</strong> {{ product?.size }}</li>
         <li><strong>Couleur :</strong> {{ product?.color }}</li>
+          <li>
+              <button mat-icon-button *ngIf="!isFavorite" (click)="addToFavorite()">
+                  <mat-icon>favorite_border</mat-icon>
+              </button>
+              <button  mat-icon-button *ngIf="isFavorite" (click)="removeFromFavorite()">
+                  <mat-icon>favorite</mat-icon>
+              </button>
+
+          </li>
       </ul>
     </div>
     <div class="product-actions">

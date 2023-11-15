@@ -4,6 +4,7 @@ import {ProductsService} from "../../services/products/products.service";
 import {ProductModel} from "../../models/product";
 import {CartService} from "../../services/cart/cart.service";
 import {AuthService} from "../../services/authentication/auth.service";
+import {FavorisService} from "../../services/favoris/favoris.service";
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +13,9 @@ import {AuthService} from "../../services/authentication/auth.service";
 })
 export class ProductDetailComponent implements OnInit{
   public product : ProductModel | undefined;
-  constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private authService : AuthService,private router: Router) { }
+  isFavorite: boolean = false;
+
+    constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private authService : AuthService, private favoriService:FavorisService,private router: Router) { }
 
   ngOnInit(): void {
     const productId = this.route.snapshot.params['id'];
@@ -31,4 +34,20 @@ export class ProductDetailComponent implements OnInit{
       }
     }
   }
+  addToFavorite(){
+    if(this.product){
+      this.favoriService.addToFavorite(this.product);
+      this.isFavorite = true;
+
+    }
+  }
+  removeFromFavorite(){
+    if(this.product){
+      this.favoriService.removeFromFavorite(this.product);
+      this.isFavorite = false;
+
+    }
+  }
+
+
 }

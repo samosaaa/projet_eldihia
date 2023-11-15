@@ -1,11 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/authentication/auth.service';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Router} from '@angular/router';
 import {UserService} from "../../services/user/user.service";
 import {users} from "../../mock/data";
-import {UserModel} from "../../models/user";
-import { InscriptionForm } from "./inscription-form.model";
+import {SnackbarService} from "../../services/snackbar/snackbar.service";
 
 @Component({
     selector: 'app-inscription',
@@ -13,13 +12,14 @@ import { InscriptionForm } from "./inscription-form.model";
     styleUrls: ['./inscription.component.scss']
 })
 
-export class InscriptionComponent {
+export class InscriptionComponent implements OnInit{
     inscriptionForm!: FormGroup;
-    isAuthenticated!: false;
-    private usersList: UserModel[] = users;
 
+    constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private userService: UserService, private snackbarService: SnackbarService) {
 
-    constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private userService: UserService) {
+    }
+
+    ngOnInit() {
         this.inscriptionForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
@@ -38,13 +38,14 @@ export class InscriptionComponent {
 
                     this.userService.isLogged(user);
                     this.authService.login(mail, mdp);
-                    if (this.authService.isAuthenticated){
-                        alert('Inscription réussie');
+                    if (this.authService.isAuthenticated) {
+                        this.authService.logout();
+                        this.snackbarService.openSnackBar("Inscription réussie !", 5)
                         this.router.navigate(['/connexion']);
                     }
                 },
                 (error) => {
-                    alert('Échec de l\'inscription');
+                    this.snackbarService.openSnackBar("Échec de l\'inscription !", 4)
                 }
             );
     }

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ProductModel} from "./models/product";
 import {ProductsService} from "./services/products/products.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,5 @@ export class AppComponent{
   productService.getProducts().subscribe((data: ProductModel[]) => {
       });
   }
-
-
-
 }
+
