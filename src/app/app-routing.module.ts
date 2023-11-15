@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import {AccueilComponent} from "./accueil/accueil.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
 import {InscriptionComponent} from "./inscription/inscription.component";
@@ -10,6 +10,8 @@ import {CategoryCaftanComponent} from "./category/category-caftan/category-cafta
 import {CategoryChaouiComponent} from "./category/category-chaoui/category-chaoui.component";
 import {CategoryKarakouComponent} from "./category/category-karakou/category-karakou.component";
 import {ProductDetailComponent} from "./product-detail/product-detail.component";
+import {MaisonComponent} from "./maison/maison.component";
+import {CartComponent} from "./cart/cart.component";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: "full"},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'chaoui', component: CategoryChaouiComponent},
   {path: 'karakou', component: CategoryKarakouComponent},
   {path: 'product/:id', component: ProductDetailComponent},
+  {path:'maison',component:MaisonComponent},
+  {path:'panier',component:CartComponent},
   {path: '**', component: AccueilComponent},
 
 ];
@@ -30,6 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule { }
