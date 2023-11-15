@@ -36,25 +36,25 @@
 }
 
 .type1 {
-  background-image: url('/src/assets/Robes/kabyle/RobeK1.jpeg');
+  background-image: url('/assets/Robes/kabyle/RobeK1.jpeg');
 }
 
 .type2 {
-  background-image: url('/src/assets/Robes/caftan/RobeCA1.jpeg');
+  background-image: url('/assets/Robes/caftan/RobeCA1.jpeg');
 }
 
 .type3 {
-  background-image: url('/src/assets/Robes/chaoui/RobeCH1.jpeg');
+  background-image: url('/assets/Robes/chaoui/RobeCH1.jpeg');
 }
 
 .type4 {
-  background-image: url('/src/assets/Robes/karakou/RobeKA1.jpeg');
+  background-image: url('/assets/Robes/karakou/RobeKA1.jpeg');
 }
 
 .category-card h2 {
   font-weight: bold;
-  font-size: 60px; /* Ajustez la taille du texte selon vos besoins */
-  color: white; /* Couleur du texte foncée */
+  font-size: 60px;
+  color: white;
 }
 
 .category-card:hover .type1, .category-card:hover .type2, .category-card:hover .type3, .category-card:hover .type4 {

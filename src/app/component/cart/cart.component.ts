@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductModel} from "../../models/product";
 import {CartService} from "../../services/cart/cart.service";
+import {SnackbarService} from "../../services/snackbar/snackbar.service";
 
 @Component({
     selector: 'app-cart',
@@ -10,7 +11,7 @@ import {CartService} from "../../services/cart/cart.service";
 export class CartComponent implements OnInit{
     cartItems: ProductModel[] | undefined;
 
-    constructor(private cartService: CartService) {
+    constructor(private cartService: CartService, private snackbarService: SnackbarService ) {
     }
 
     ngOnInit(): void {
@@ -19,6 +20,8 @@ export class CartComponent implements OnInit{
 
     removeProductFromCart(product: ProductModel): void {
         this.cartService.removeFromCart(product);
+        this.snackbarService.openSnackBar("Cette robe à été supprimée du panier.")
+
     }
 
 }

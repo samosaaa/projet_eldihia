@@ -8,34 +8,33 @@
             <li class="nav-item"><a class="nav-link" routerLink="#">La Maison</a></li>
 
             <ng-container *ngIf="authService.isAuthenticatedUser(); else notAuthenticatedBlock">
-                <ng-container *ngIf="authService.isAdminUser(); else notAdminBlock">
+                <ng-container *ngIf="authService.isAdminUser()">
                     <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
-                                            [routerLink]="['/admin']">Admin</a></li>
+                                            [routerLink]="['/admin']">
+                        <mat-icon>supervisor_account</mat-icon>
+                    </a></li>
                 </ng-container>
-                <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
-                                        [routerLink]="['/favoris']">
-                    <mat-icon>favorite</mat-icon>
-                </a></li>
-                <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
-                                        [routerLink]="['/panier']">
-                    <mat-icon>shopping_cart</mat-icon>
-                </a></li>
-                <li class="nav-item"><a class="nav-link" (click)="signOut()">
-                    <mat-icon>exit_to_app</mat-icon>
-                </a></li>
+
+
+            <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
+                                    [routerLink]="['/favoris']">
+                <mat-icon>favorite</mat-icon>
+            </a></li>
+            <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
+                                    [routerLink]="['/panier']">
+                <mat-icon>shopping_cart</mat-icon>
+            </a></li>
+            <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon" (click)="signOut()">
+                <mat-icon>exit_to_app</mat-icon>
+            </a></li>
             </ng-container>
             <ng-template #notAuthenticatedBlock>
-                <li class="nav-item"><a class="nav-link" [routerLink]="['/connexion']">
-                    <mat-icon>account_circle</mat-icon>
-                </a></li>
-            </ng-template>
-
-            <ng-template #notAdminBlock>
                 <li class="nav-item"><a class="nav-link" mat-icon-button class="example-icon"
                                         [routerLink]="['/connexion']">
                     <mat-icon>account_circle</mat-icon>
                 </a></li>
             </ng-template>
+
         </ul>
     </div>
 </nav>

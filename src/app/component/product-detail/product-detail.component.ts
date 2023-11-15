@@ -5,6 +5,7 @@ import {ProductModel} from "../../models/product";
 import {CartService} from "../../services/cart/cart.service";
 import {AuthService} from "../../services/authentication/auth.service";
 import {FavorisService} from "../../services/favoris/favoris.service";
+import {SnackbarService} from "../../services/snackbar/snackbar.service";
 
 @Component({
   selector: 'app-product-detail',
@@ -15,9 +16,9 @@ export class ProductDetailComponent implements OnInit{
   public product : ProductModel | undefined;
   isFavorite: boolean = false;
 
-    constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private authService : AuthService, private favoriService:FavorisService,private router: Router) { }
+    constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private authService : AuthService, private favoriService:FavorisService, private router: Router, private snackbarService:SnackbarService) { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     const productId = this.route.snapshot.params['id'];
     this.productsService.getProductById(productId).subscribe(product => {
       this.product = product;
@@ -28,6 +29,8 @@ export class ProductDetailComponent implements OnInit{
     if (this.product) {
       if (this.authService.isAuthenticatedUser()){
         this.cartService.addToCart(this.product);
+        this.snackbarService.openSnackBar("Cette robe à été ajouté au panier.")
+
       }
       else {
         this.router.navigate(['/connexion']);
@@ -38,6 +41,8 @@ export class ProductDetailComponent implements OnInit{
     if(this.product){
       this.favoriService.addToFavorite(this.product);
       this.isFavorite = true;
+      this.snackbarService.openSnackBar("Cette robe à été ajoutée au favoris.")
+
 
     }
   }
@@ -45,6 +50,7 @@ export class ProductDetailComponent implements OnInit{
     if(this.product){
       this.favoriService.removeFromFavorite(this.product);
       this.isFavorite = false;
+      this.snackbarService.openSnackBar("Cette robe à été supprimée des favoris.")
 
     }
   }

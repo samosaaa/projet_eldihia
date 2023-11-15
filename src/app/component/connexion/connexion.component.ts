@@ -22,7 +22,7 @@ export class ConnexionComponent implements OnInit{
     this.initForm();
   }
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, public snackbarService:SnackbarService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private snackbarService:SnackbarService) {
     this.userAuthentication = this.formBuilder.group({
       mail: ['', [Validators.required, Validators.email]],
       mdp: ['', Validators.required],
