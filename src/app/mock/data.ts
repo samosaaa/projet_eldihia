@@ -1,5 +1,6 @@
 import {ProductModel} from "../models/product";
 import {UserModel} from "../models/user";
+import {ReviewModel} from "../models/review";
 
 // mock/data.ts
 
@@ -199,7 +200,7 @@ export const productData = [
 ;
 
 export const productModels: ProductModel[] = productData.map(productData => {
-    return new ProductModel(productData.id, productData.name, productData.price, productData.image, productData.size, productData.color, productData.type,productData.stock);
+    return new ProductModel(productData.id, productData.name, productData.price, productData.image, productData.size, productData.color, productData.type, productData.stock);
 });
 export const userData = [
     {firstName: 'Salah', lastName: 'Bouroubi', mail: 'sbouroubi@gmail.com', mdp: '1234', role: 'admin'},
@@ -213,3 +214,15 @@ export const users: UserModel[] = userData.map(userData => {
     return new UserModel(userData.firstName, userData.lastName, userData.mail, userData.mdp, userData.role)
 });
 
+export const reviewsData:ReviewModel[] =  [
+    new ReviewModel('1','Alice', 4, 'Très bon produit!','4'),
+    new ReviewModel('2','Bob', 5, 'J\'adore cette robe.','12'),
+    new ReviewModel('3', 'Charlie', 3, 'La taille ne convient pas.', '8'),
+    new ReviewModel('4', 'David', 5, 'Livraison rapide, super qualité!', '6'),
+    new ReviewModel('5', 'Eva', 2, 'Couleur différente de la photo.', '2'),
+    new ReviewModel('6', 'Frank', 4, 'Confortable et élégant.', '10'),
+]
+
+export const reviews: ReviewModel[] = reviewsData.map(reviewsData => {
+    return new ReviewModel(reviewsData.id,reviewsData.username, reviewsData.rating, reviewsData.comment,reviewsData.robeId)
+});

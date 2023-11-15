@@ -1,4 +1,4 @@
-.product-box{
+.product-box {
   padding: 30px;
 }
 
@@ -63,5 +63,47 @@
   display: inline-block; /* Pour que la largeur du bouton s'adapte au contenu */
 }
 
+/* Styles pour les commentaires */
+h3 {
+  font-size: 20px;
+  margin-top: 20px;
+}
 
+.comment-box {
+  display: flex;
+  margin-bottom: 10px;
+}
 
+.comment-box p {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Styles pour le formulaire */
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: lightpink;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
