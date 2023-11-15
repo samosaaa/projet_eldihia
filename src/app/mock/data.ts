@@ -192,7 +192,47 @@ export const productData = [
             color: 'rouge',
             type: 'karakou',
             stock: 25
-        }
+        },
+    {
+        id: '20',
+        name: 'Karima',
+        price: 80,
+        image: 'assets/Robes/chaoui/RobeCH5.jpeg',
+        size: 'S',
+        color: 'rose',
+        type: 'chaoui',
+        stock: 10
+    },
+    {
+        id: '21',
+        name: 'Saida',
+        price: 110,
+        image: 'assets/Robes/chaoui/RobeCH6.jpeg',
+        size: 'M',
+        color: 'verte',
+        type: 'chaoui',
+        stock: 12
+    },
+    {
+        id: '22',
+        name: 'Fatima',
+        price: 75,
+        image: 'assets/Robes/chaoui/RobeCH7.jpeg',
+        size: 'L',
+        color: 'jaune',
+        type: 'chaoui',
+        stock: 8
+    },
+    {
+        id: '23',
+        name: 'Layla',
+        price: 120,
+        image: 'assets/Robes/chaoui/RobeCH8.jpeg',
+        size: 'XL',
+        color: 'violet',
+        type: 'chaoui',
+        stock: 15
+    },
     ]
 
 ;
