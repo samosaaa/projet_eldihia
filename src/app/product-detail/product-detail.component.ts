@@ -23,7 +23,6 @@ export class ProductDetailComponent implements OnInit{
   addToCart() {
     if (this.product) {
       this.cartService.addToCart(this.product);
-      console.log("je suis dans product detail et j'ajoute ça : ",this.product)
     }
   }
 }

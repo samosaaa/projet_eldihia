@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductModel} from "../models/product";
 import {CartService} from "../services/cart/cart.service";
+
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.scss']
 })
-export class CartComponent {
-  cartItems: ProductModel[] | undefined;
+export class CartComponent implements OnInit{
+    cartItems: ProductModel[] | undefined;
 
-  constructor(private cartService: CartService) {}
+    constructor(private cartService: CartService) {
+    }
 
-  ngOnInit(): void {
-    this.cartItems = this.cartService.getItems();
-    console.log("je suis dans le ts du panier et voici le panier : ",this.cartItems);
-  }
+    ngOnInit(): void {
+        this.cartItems = this.cartService.getItems();
+    }
+
+    removeProductFromCart(product: ProductModel): void {
+        this.cartService.removeFromCart(product);
+    }
+
 }

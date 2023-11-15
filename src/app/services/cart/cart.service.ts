@@ -18,8 +18,11 @@ export class CartService {
     console.log("je suis dans le get du service : ",this.items)
     return this.items;
   }
-
-  clearCart() {
-    this.items = [];
+  removeFromCart(product: ProductModel) {
+    const index = this.items.findIndex(item => item.id === product.id);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+      console.log("Item removed from cart:", product);
+    }
   }
 }
